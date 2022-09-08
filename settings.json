@@ -1,0 +1,33 @@
+{
+	"latex-workshop.latex.tools": [
+		{
+			"name": "platexmk",
+			"command": "latexmk",
+			"args": [
+				"-e",
+				"$latex=q/platex -synctex=1 -interaction=nonstopmode -halt-on-error/",
+				"-e",
+				"$bibtex=q/pbibtex/",
+				"-e",
+				"$biber=q/biber --bblencoding=utf8 -u -U --output_safechars/",
+				"-e",
+				"$dvipdf=q/dvipdfmx %O -o %D %S/",
+				"-e",
+				"$pdf_mode=3",
+				"-e",
+				"$makeindex=q/mendex %O -o %D %S/",
+				"%DOC%",
+				"-e",
+				"$ENV{'TEXINPUTS'}='.//:' . $ENV{'TEXINPUTS'}"
+			]
+		},
+    ]
+    "latex-workshop.latex.recipes": [
+		{
+			"name": "platexmk",
+			"tools": [
+				"platexmk",
+			]
+		},
+    ]
+  }
